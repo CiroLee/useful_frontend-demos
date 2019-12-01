@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label class="switch switch-unchecked">
+        <input id='checkbox-input' type="checkbox">
+        <div class="circle" ></div>
+        <span>off</span>
+    </label>
+</body>
+<script>
+    let checkInput = document.querySelector('#checkbox-input');
+    let switchLabel = document.querySelector('label');
+    let textSpan = document.querySelector('.switch span');
+    checkInput.addEventListener('change',function(){
+        console.log(this.checked)
+        if(this.checked){
+            switchLabel.classList.add('switch-checked');
+            switchLabel.classList.remove('switch-unchecked');
+            textSpan.innerHTML = 'on'
+        } else {
+            switchLabel.classList.remove('switch-checked');
+            switchLabel.classList.add('switch-unchecked');
+            textSpan.innerHTML = 'off'
+        }
+    },false)
+</script>
+</html>
