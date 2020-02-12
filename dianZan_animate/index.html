@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点赞动效</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="zan-x">
+        <ul class="animate-x">
+            <li class="zan-element zan-zan ml60"></li>
+            <li class="zan-element zan-flower ml20"></li>
+            <li class="zan-element zan-heart ml40"></li>
+            <li class="zan-element zan-zan"></li>
+        </ul>
+        <button id="zanBtn" class="zan-btn"></button>
+    </div>
+</body>
+<script src="./js/anime.min.js"></script>
+<script>
+    let animation = anime({
+        targets:'.animate-x .zan-element',
+        translateY:-200,
+        opacity:0,
+        scale:.7,
+        easing:'linear',
+        autoplay:false,
+        delay:anime.stagger(200, {start: 0}),
+        
+    });
+    document.getElementById('zanBtn').addEventListener('click',function(){
+        
+        animation.play();
+        console.log('ss')
+    },false)
+</script>
+</html>
